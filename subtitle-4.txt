@@ -1,0 +1,22 @@
+In this video, you will learn about the basic
+architectural design of the Jupyter ecosystem. Jupyter implements a two-process model, with
+a kernel and a client. The client is the interface offering the user
+the ability to send the code to a kernel. The kernel executes the code and returns the
+result to the client for display. The client is the browser when using a Jupyter
+notebook. Jupyter notebooks represent your code, metadata,
+contents, and outputs. When saved it uses a dot I Pi NB (.ipynb)
+extension and a JSON structure. When you, the user, saves it, it is sent from
+your browser to the Notebook server which saves the notebook file on a disk as a JSON
+file with a dot I PI NB (.ipynb) extension. The Notebook server is responsible for saving
+and loading the notebooks. The kernel gets sent the cells of code when
+the user runs them. Jupyter also has an architecture of how it
+converts files to other formats. It uses a tool called NB convert. For example, if we want to convert a Notebook
+file into an HTML file, it will go through the following:
+The Notebook is modified by a preprocessor, an exporter converts the notebook to the new
+file format, and a postprocessor will work on the file
+produced by exporting it. After conversion, when you give the URL of
+the HTML file, it first fetches the notebook, converts it HTML, and displays the file to
+you in a HTML file. You should now be familiar with:
+The two-process model implementation of Jupyter, how Notebook servers communicate with kernels
+and clients, and the architectural design of how notebook
+files are converted to other files.
